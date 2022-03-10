@@ -6,11 +6,6 @@ namespace RangeNumberReader
 {
     public class Program
     {
-        static void Main(string[] args)
-        {
-            
-        }
-
         public static int FetchNumberOfReadings(List<int> listOfNumbers,int rangeFrom, int rangeTo)
         {
             listOfNumbers = listOfNumbers.OrderBy(x => x).ToList();
