@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RangeNumberReader
 {
@@ -12,9 +13,11 @@ namespace RangeNumberReader
 
         public static int FetchNumberOfReadings(List<int> listOfNumbers,int rangeFrom, int rangeTo)
         {
+            listOfNumbers = listOfNumbers.OrderBy(x => x).ToList();
 
+            int numberOfReadings = listOfNumbers.Where(x => x >= rangeFrom && x <= rangeTo).Count();
 
-            return 1;
+            return numberOfReadings;
         }
     }
 }
