@@ -27,6 +27,9 @@ namespace RangeNumberReader
 
         public static int ConvertAnalogReadingToAmperes(int reading)
         {
+            if (reading > maximumTemparatureAnalogReading)
+                throw new Exception("Reading exceeds the maximum value");
+
             int amperes = (int)Math.Ceiling(maximumTemperatureAmperes * reading / maximumTemparatureAnalogReading);
 
             return amperes;

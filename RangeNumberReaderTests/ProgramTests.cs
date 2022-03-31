@@ -31,5 +31,14 @@ namespace RangeNumberReader.Tests
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(Exception), "Reading exceeds the maximum value")]
+        public void ConvertAnalogReadingToAmperes_ExceedMaximumReadingTest()
+        {
+            int analogReading = 4095;
+
+            int amperes = Program.ConvertAnalogReadingToAmperes(analogReading);
+        }
+
     }
 }
