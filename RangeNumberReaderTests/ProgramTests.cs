@@ -20,25 +20,55 @@ namespace RangeNumberReader.Tests
         }
 
         [TestMethod]
-        public void ConvertAnalogReadingToAmperesTest()
+        public void ConvertAnalogReading12BitsToAmpsTest()
         {
+            int sizeOfReading = 12;
 
             int analogReading = 1146;
 
-            int amperes = Program.ConvertAnalogReadingToAmperes(analogReading);
+            int amps = Program.ConvertAnalogReadingToAmps(analogReading, sizeOfReading);
 
-            Assert.AreEqual(amperes, 3);
+            Assert.AreEqual(amps, 3);
 
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception), "Reading exceeds the maximum value")]
-        public void ConvertAnalogReadingToAmperes_ExceedMaximumReadingTest()
+        public void ConvertAnalogReading12BitsToAmps_ExceedMaximumReadingTest()
         {
+            int sizeOfReading = 12;
+
             int analogReading = 4095;
 
-            int amperes = Program.ConvertAnalogReadingToAmperes(analogReading);
+            int amps = Program.ConvertAnalogReadingToAmps(analogReading, sizeOfReading);
         }
+
+        [TestMethod]
+        public void ConvertAnalogReading10BitsToAmps_PositiveCurrentTest()
+        {
+            int sizeOfReading = 10;
+
+            int analogReading = 1022;
+
+            int amps = Program.ConvertAnalogReadingToAmps(analogReading, sizeOfReading);
+
+            Assert.AreEqual(amps, 15);
+
+        }
+
+        [TestMethod]
+        public void ConvertAnalogReading10BitsToAmps_AbsoluteCurrentTest()
+        {
+            int sizeOfReading = 10;
+
+            int analogReading = 0;
+
+            int amps = Program.ConvertAnalogReadingToAmps(analogReading, sizeOfReading);
+
+            Assert.AreEqual(amps, 15);
+
+        }
+
 
     }
 }

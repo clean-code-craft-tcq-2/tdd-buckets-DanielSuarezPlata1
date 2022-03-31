@@ -7,12 +7,19 @@ namespace RangeNumberReader
 {
     public class Program
     {
-        public static float maximumTemperatureAmperes = 10f;
+        public static float maximumTemperatureAmps = 10f;
         public static float maximumTemparatureAnalogReading = 4094;
+
+        static Dictionary<int, MaximumTemperature> maximumTemperatures = new Dictionary<int, MaximumTemperature>
+        {
+            { 12, new MaximumTemperature {amps = 10f, analogReading = 4094, minValue = 0} },
+            { 10, new MaximumTemperature {amps = 15f, analogReading = 1022, minValue = 511} }
+        };
 
         [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
+           
             
         }
 
@@ -25,14 +32,17 @@ namespace RangeNumberReader
             return numberOfReadings;
         }
 
-        public static int ConvertAnalogReadingToAmperes(int reading)
+        public static int ConvertAnalogReadingToAmps(int reading, int sizeOfReading)
         {
             if (reading > maximumTemparatureAnalogReading)
                 throw new Exception("Reading exceeds the maximum value");
 
-            int amperes = (int)Math.Ceiling(maximumTemperatureAmperes * reading / maximumTemparatureAnalogReading);
+            if (reading < maximumTemperatures[sizeOfReading].minValue)
+                reading = maximumTemperatures[sizeOfReading].analogReading - reading;
 
-            return amperes;
+            int amps = (int)Math.Abs(Math.Ceiling(maximumTemperatures[sizeOfReading].amps * reading / maximumTemperatures[sizeOfReading].analogReading));
+
+            return amps;
         }
     }
 }
