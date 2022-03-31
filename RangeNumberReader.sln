@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeNumberReader", "RangeNumberReader\RangeNumberReader.csproj", "{18AD2782-29EC-4381-BCA3-C2F039893F5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeNumberReaderTests", "RangeNumberReaderTests\RangeNumberReaderTests.csproj", "{0AF7E3EB-AF3A-49CF-8AA7-226ECF5EECAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18AD2782-29EC-4381-BCA3-C2F039893F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AD2782-29EC-4381-BCA3-C2F039893F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AD2782-29EC-4381-BCA3-C2F039893F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AD2782-29EC-4381-BCA3-C2F039893F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF7E3EB-AF3A-49CF-8AA7-226ECF5EECAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF7E3EB-AF3A-49CF-8AA7-226ECF5EECAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF7E3EB-AF3A-49CF-8AA7-226ECF5EECAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF7E3EB-AF3A-49CF-8AA7-226ECF5EECAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37100F65-8DC0-47EF-8DD9-5F2CEDEE4338}
+	EndGlobalSection
+EndGlobal
