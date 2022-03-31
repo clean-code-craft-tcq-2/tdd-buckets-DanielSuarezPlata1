@@ -7,6 +7,9 @@ namespace RangeNumberReader
 {
     public class Program
     {
+        public static float maximumTemperatureAmperes = 10f;
+        public static float maximumTemparatureAnalogReading = 4094;
+
         [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
@@ -20,6 +23,13 @@ namespace RangeNumberReader
             int numberOfReadings = listOfNumbers.Where(x => x >= rangeFrom && x <= rangeTo).Count();
 
             return numberOfReadings;
+        }
+
+        public static int ConvertAnalogReadingToAmperes(int reading)
+        {
+            int amperes = (int)Math.Ceiling(maximumTemperatureAmperes * reading / maximumTemparatureAnalogReading);
+
+            return amperes;
         }
     }
 }

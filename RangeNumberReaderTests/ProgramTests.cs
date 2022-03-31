@@ -18,5 +18,18 @@ namespace RangeNumberReader.Tests
 
             Assert.AreEqual(numberOfReadings, 2);
         }
+
+        [TestMethod]
+        public void ConvertAnalogReadingToAmperesTest()
+        {
+
+            int analogReading = 1146;
+
+            int amperes = Program.ConvertAnalogReadingToAmperes(analogReading);
+
+            Assert.AreEqual(amperes, 3);
+
+        }
+
     }
 }
